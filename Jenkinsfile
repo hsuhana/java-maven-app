@@ -5,7 +5,7 @@ pipeline {
     agent any
 
     tools {
-        maven-3.9
+        'Maven'
     }
 
     stages {
