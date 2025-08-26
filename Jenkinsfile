@@ -19,8 +19,6 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
-                    echo "building jar"
-                    //gv.buildJar() // it's from script.groovy
                     buildJar() //it's from shared library
                 }
             }
@@ -28,8 +26,6 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    echo "building image"
-                    //gv.buildImage() // it's from script.groovy
                     buildImage() //it's from shared library
                 }
             }
