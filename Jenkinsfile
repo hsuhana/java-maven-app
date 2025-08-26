@@ -26,7 +26,7 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    buildImage() //it's from shared library
+                    buildImage 'tracyhsu57/demo-app:jma-2.2' //it's from shared library
                 }
             }
         }
