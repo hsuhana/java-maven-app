@@ -1,4 +1,13 @@
-@Library('jenkins-shared-library') // if there is no other commands between @Library('jenkins-shared-library') and pipeline {, must be like @Library('jenkins-shared-library')_
+@Library('jenkins-shared-library-start@master') // if there is no other commands between @Library('jenkins-shared-library') and pipeline {, must be like @Library('jenkins-shared-library')_
+
+// for project scope library
+library identifier: 'jenkins-shared-library-start@master', retriver: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/hsuhana/jenkins-shared-library-start.git',
+    credentialsId: 'Github-repo'
+])
+// @Library('enkins-shared-library@master') -> this is optional
+
 def gv
 
 pipeline {
