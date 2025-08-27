@@ -23,10 +23,12 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps {
                 script {
-                    buildImage 'tracyhsu57/demo-app:jma-2.2' //it's from shared library
+                    buildImage 'tracyhsu57/demo-app:jma-2.3' //it's from shared library
+                    dockerLogin()
+                    dockerPush 'tracyhsu57/demo-app:jma-2.3'
                 }
             }
         }
