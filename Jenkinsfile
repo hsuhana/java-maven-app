@@ -1,6 +1,6 @@
 def gv
 
-// comment
+// comment comment
 pipeline {
     agent any
 
